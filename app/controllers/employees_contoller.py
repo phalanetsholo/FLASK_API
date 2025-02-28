@@ -31,3 +31,7 @@ def update_employee_route(id):
 
     update_employee(id, first_name, last_name, email, phone, department)
     return jsonify({'message': 'Employee updated successfully'}), 200
+
+def delete_employee_route(id):
+    delete_employee(id)
+    return jsonify({'message': 'Employee deleted successfully'}), 200
