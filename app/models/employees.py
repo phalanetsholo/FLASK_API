@@ -35,7 +35,7 @@ def update_employee(id, first_name, last_name, email, phone, department):
     cursor.close()
     conn.close()
     
-    def delete_employee(id):
+def delete_employee(id):
     conn = get_db_connection()
     cursor = conn.cursor()
     cursor.execute('DELETE FROM employees WHERE id = %s', (id,))
