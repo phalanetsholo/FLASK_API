@@ -1,5 +1,5 @@
 from flask import Blueprint
-from app.controllers.employees_controller import add_employee, view_employees, update_employee_route, delete_employee_route
+from app.controllers.employees_contoller import add_employee, view_employees, update_employee_route, delete_employee_route
 
 employee_bp = Blueprint('employee', __name__)
 
