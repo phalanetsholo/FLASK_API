@@ -25,3 +25,12 @@ def get_all_employees():
     cursor.close()
     conn.close()
     return employees
+
+def update_employee(id, first_name, last_name, email, phone, department):
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute('UPDATE employees SET first_name = %s, last_name = %s, email = %s, phone = %s, department = %s WHERE id = %s',
+                   (first_name, last_name, email, phone, department, id))
+    conn.commit()
+    cursor.close()
+    conn.close()

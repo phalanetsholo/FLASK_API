@@ -20,3 +20,14 @@ def add_employee():
 def view_employees():
     employees = get_all_employees()
     return jsonify({'employees': employees}), 200
+
+def update_employee_route(id):
+    data = request.get_json()
+    first_name = data.get('first_name')
+    last_name = data.get('last_name')
+    email = data.get('email')
+    phone = data.get('phone')
+    department = data.get('department')
+
+    update_employee(id, first_name, last_name, email, phone, department)
+    return jsonify({'message': 'Employee updated successfully'}), 200
